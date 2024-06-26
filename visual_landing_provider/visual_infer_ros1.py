@@ -4,7 +4,7 @@ import rospy
 import rospkg
 from tf.transformations import quaternion_from_euler
 
-from mavros_msgs.msg import Altitude
+from nav_msgs.msg import Odometry
 from sensor_msgs.msg import Image
 from geometry_msgs.msg import Pose
 
@@ -34,11 +34,11 @@ class VisualInference:
             self.image_publisher = rospy.Publisher("/visual_infer/image_raw", Image, queue_size=10)
 
         rospy.Subscriber(self.params['/image_topic'], Image, self._image_callback)
-        rospy.Subscriber(self.params['/mavros_altitude_topic'], Altitude, self._altitude_callback)
+        rospy.Subscriber(self.params['/mavros_altitude_topic'], Odometry, self._altitude_callback)
 
         rospy.loginfo(f'Node visual_infer_node started!')
 
-    def _altitude_callback(self, data: Altitude):
+    def _altitude_callback(self, data: Odometry):
         """ Altitude callback.
 
         Parameters
@@ -46,7 +46,7 @@ class VisualInference:
         data : Altitude
             Altitude message.
         """
-        self.altitude = data.local
+        self.altitude = data.pose.pose.position.z
 
     def _image_callback(self, data: Image):
         """ Image callback. Main loop of the node.

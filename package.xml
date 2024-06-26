@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>visual_landing_provider</name>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <description>The visual_landing_provider package</description>
   <maintainer email="vision@put.poznan.pl">PUT Vision Laboratory</maintainer>
   <license>Apache License 2.0</license>
@@ -12,22 +12,15 @@
   <depend condition="$ROS_VERSION == 1">rospy</depend>
   <depend condition="$ROS_VERSION == 2">rclpy</depend>
 
-  <build_depend>sensor_msgs</build_depend>
-  <build_depend>std_msgs</build_depend>
-  <build_depend>geometry_msgs</build_depend>
-  <build_depend>mavros_msgs</build_depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>mavros_msgs</depend>
+  <depend>nav_msgs</depend>
   
   <build_export_depend>rospy</build_export_depend>
-  <build_export_depend>sensor_msgs</build_export_depend>
-  <build_export_depend>std_msgs</build_export_depend>
-  <build_export_depend>geometry_msgs</build_export_depend>
-  <build_export_depend>mavros_msgs</build_export_depend>
   
   <exec_depend>rospy</exec_depend>
-  <exec_depend>sensor_msgs</exec_depend>
-  <exec_depend>std_msgs</exec_depend>
-  <exec_depend>geometry_msgs</exec_depend>
-  <exec_depend>mavros_msgs</exec_depend>
 
   <export>
     <build_type condition="$ROS_VERSION == 2">ament_python</build_type>

@@ -18,6 +18,7 @@ if ( ament_cmake_FOUND )
     std_msgs
     geometry_msgs
     mavros_msgs
+    nav_msgs
   )
 
   include_directories(
@@ -34,6 +35,7 @@ elseif( CATKIN_DEVEL_PREFIX OR CATKIN_BUILD_BINARY_PACKAGE )
     std_msgs
     geometry_msgs
     mavros_msgs
+    nav_msgs
     )
 
   catkin_package()

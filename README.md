@@ -38,25 +38,10 @@ This repository includes an image processing pipeline for accurate landing pad d
 
 ## Installation 
 
-#### ROS Melodic/Noetic
-
-* `cd catkin_ws/src`
-
-* `git clone https://github.com/PUTvision/VITAL.git`
-
-* `cd ../` 
-
-* `catkin build`
-
-#### ROS2 Foxy
-
-* `cd ros2_ws/src`
-
-* `git clone https://github.com/PUTvision/VITAL.git`
-
-* `cd ../` 
-
-* `colcon build`
+```shell
+git clone https://github.com/HUaYuXiao/VITAL.git
+catkin_make install --source YOLO/VITAL --build YOLO/VITAL/build
+```
 
 ## Config documentation
 
@@ -64,17 +49,9 @@ All configuration parameters from `config.yaml` are described in [config docs](.
 
 ## Usage
 
-#### ROS Melodic/Noetic
-
 * `source devel/setup.bash`
 
 * `roslaunch visual_landing_provider visual_infer.launch`
-
-#### ROS2 Foxy
-
-* `source install/setup.bash`
-
-* `ros2 launch visual_landing_provider visual_infer.launch.py`
 
 ## For developers
 
